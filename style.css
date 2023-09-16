@@ -1,0 +1,42 @@
+* {
+    background-color: #408E91;
+}
+
+
+.circle {
+    background-color: white; /* Set the background color */
+    border-radius: 50%; /* Makes the element a circle */
+    position: absolute; /* Allows positioning */
+    
+}
+
+.circle1 {
+    width: 180.02px;
+    height: 210.04px;
+    top: 228.47px;
+    left: 434.97px;
+}
+
+.circle2 {
+    width: 126.42px; /* Adjust the width and height as needed */
+    height: 168.23px;
+    top: 270.28px;
+    left: 329px;
+
+}
+
+.circle3 {
+    width: 114.41px;
+    height: 132.25px;
+    top: 306.26px;
+    left: 572.59px;
+}
+
+.rectangle {
+    background-color: white;
+    width: 238.43px;
+    height: 84.6px;
+    position: absolute;
+    top: 354px;
+    left: 390px;
+}
