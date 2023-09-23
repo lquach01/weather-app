@@ -2,41 +2,70 @@
     background-color: #408E91;
 }
 
-
+.cloud {
+    background-color: white;
+}
 .circle {
-    background-color: white; /* Set the background color */
-    border-radius: 50%; /* Makes the element a circle */
-    position: absolute; /* Allows positioning */
-    
+    border-radius: 50%; 
+    position: absolute;
 }
 
-.circle1 {
+#cloud1 {
     width: 180.02px;
     height: 210.04px;
     top: 228.47px;
     left: 434.97px;
 }
 
-.circle2 {
-    width: 126.42px; /* Adjust the width and height as needed */
+#cloud2 {
+    width: 126.42px; 
     height: 168.23px;
     top: 270.28px;
     left: 329px;
 
 }
 
-.circle3 {
+#cloud3 {
     width: 114.41px;
     height: 132.25px;
     top: 306.26px;
     left: 572.59px;
 }
 
-.rectangle {
-    background-color: white;
+#cloud-rect {
     width: 238.43px;
     height: 84.6px;
     position: absolute;
     top: 354px;
     left: 390px;
+}
+
+.sun {
+    background-color: #F2BE22;
+}
+
+#sunny-sun-center {
+    height: 286px;
+    width: 286px;
+    left: 424px;
+    top: 167px;
+}
+
+
+#cloudy-sun {
+    height: 188.89px;
+    width: 188.89px;
+    left: 313px;
+    top: 165px;
+}
+
+
+
+
+
+
+
+
+#today-temp {
+    font-size: larger;
 }

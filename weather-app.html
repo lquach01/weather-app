@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html>
     <head> 
-        <script src="weather-app.js"> </script>
+        <script src="weather-app.js" defer> </script>
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-        <div class = 'cloud'> 
-            <div class = "circle circle1"> </div> 
-            <div class = "circle circle2"> </div> 
-            <div class = "circle circle3"> </div> 
-            <div class = "rectangle"> </div> 
+        <div class = 'today'>
+            
+
+            <div class = "circle sun" id = 'cloudy-sun'></div>
+
+            <div id = 'cloud'> 
+                <div class = "cloud circle" id = "cloud1"> </div> 
+                <div class = "cloud circle" id = "cloud2"> </div> 
+                <div class = "cloud circle" id = "cloud3"> </div> 
+                <div class = "cloud" id = "cloud-rect"> </div> 
+            </div>
+
+            <div id = 'sunny-sun'>
+                <div class = "circle sun" id = "sunny-sun-center"></div>
+            </div>
+
+            <h1 id = "today-temp"></h1>
         </div>
         
     </body>
+
 
 
 
