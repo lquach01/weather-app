@@ -57,7 +57,7 @@ async function main() {
     const rain = data.hourly.rain;
     
     
-      
+    console.log(apparent_temperature[0]);
     
 
     //console.log(uv_index_max);
@@ -65,10 +65,12 @@ async function main() {
 
 
     todayWeather(uv_index_max[0], precipitation[0], temperatureData[0]);
+    todayOtherInfo(precipitation_probability, apparent_temperature, sunrise, sunset, uv_index_max);
     weekWeather(precipitation_probability_max, temperature_2m_max, temperature_2m_min);
     
     
 }
+
 
 function todayWeather(uv_index, precip, temp) {
   const sun_cloud = document.getElementById("cloudy-sun");
@@ -91,8 +93,17 @@ function todayWeather(uv_index, precip, temp) {
   }
 
   document.getElementById("today-temp").innerHTML = temp + "°";
-
   //console.log(uv_index, precip);
+}
+
+function todayOtherInfo(precipitation_probability, apparent_temperature, sunrise, sunset, uv_index_max) {
+  const sunriseTime = new Date(sunrise[0]);
+  const sunsetTime = new Date (sunset[0]);
+  document.getElementById("precip-prob").innerHTML = "Precipitation Probability: " + precipitation_probability[0] + "%";
+  document.getElementById("apparent-temp").innerHTML = "Apparent Temperature: " + apparent_temperature[0] + "°";
+  document.getElementById("sunrise").innerHTML = "Sunrise: " + sunriseTime.getHours() + ":" + sunriseTime.getMinutes();
+  document.getElementById("sunset").innerHTML = "Sunset: " + sunsetTime.getHours() + ":" + sunsetTime.getMinutes();
+  document.getElementById("uv-index").innerHTML = "UV Index: " + uv_index_max[0];
 }
 
 

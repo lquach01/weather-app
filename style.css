@@ -79,8 +79,15 @@
 }
 
 
-
 h1 {
     color: white;
     font-size: 200px;
+}
+
+h4 {
+    color: white;
+}
+
+h5 {
+    color: white;
 }
