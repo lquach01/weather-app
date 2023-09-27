@@ -1,5 +1,6 @@
 const apiUrl = 'https://api.open-meteo.com/v1/forecast?latitude=49.2606&longitude=123.246&hourly=temperature_2m,apparent_temperature,precipitation_probability,precipitation,rain&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max,precipitation_probability_max&timezone=America%2FLos_Angeles';
 
+
 async function fetchDataFromAPI() {
   try {
       const response = await fetch(apiUrl);
@@ -55,7 +56,7 @@ async function main() {
     // (mm)
     const rain = data.hourly.rain;
     
-    //document.getElementById("today-temp").innerHTML = temperatureData[0];
+    
       
     
 
@@ -63,28 +64,65 @@ async function main() {
     //[4.65, 3, 4.05, 4.4, 2.65, 2.8, 2.45]
 
 
-
-    const sun_cloud = document.getElementById("cloudy-sun");
-    const cloud = document.getElementById("cloud");
-    const sun = document.getElementById("sunny-sun");
-
-    if (uv_index_max[0] >= 4) {
-      sun_cloud.style.display = "none";
-      cloud.style.display = "none";
-      sun.style.display = "block";
-
-    } else if (uv_index_max[0] >= 3){
-      sun_cloud.style.display = "block";
-      cloud.style.display = "block";
-      sun.style.display = "none";
-    } else {
-      sun_cloud.style.display = "none";
-      cloud.style.display = "block";
-      sun.style.display = "none";
-    }
-
-
+    todayWeather(uv_index_max[0], precipitation[0], temperatureData[0]);
+    weekWeather(precipitation_probability_max, temperature_2m_max, temperature_2m_min);
+    
+    
 }
+
+function todayWeather(uv_index, precip, temp) {
+  const sun_cloud = document.getElementById("cloudy-sun");
+  const cloud = document.getElementById("cloud");
+  const sun = document.getElementById("sunny-sun");
+
+  if (uv_index >= 6) {
+    sun_cloud.style.display = "none";
+    cloud.style.display = "none";
+    sun.style.display = "block";
+
+  } else if (uv_index>= 3){
+    sun_cloud.style.display = "block";
+    cloud.style.display = "block";
+    sun.style.display = "none";
+  } else {
+    sun_cloud.style.display = "none";
+    cloud.style.display = "block";
+    sun.style.display = "none";
+  }
+
+  document.getElementById("today-temp").innerHTML = temp + "°";
+
+  //console.log(uv_index, precip);
+}
+
+
+function weekWeather(precipitation_probability_max, temperature_2m_max, temperature_2m_min) {
+  for (let i = 0; i <= 6; i++) {
+    document.getElementById("date" + i).innerHTML = getWeekday(i);
+    document.getElementById("max-temp-" + i).innerHTML = "Max temp: " + temperature_2m_max[i] + "°";
+    document.getElementById("min-temp-" + i).innerHTML = "Min temp: " + temperature_2m_min[i] + "°";
+    document.getElementById("precip-" + i).innerHTML = "Precip: " + precipitation_probability_max[i] + "%";
+  }
+}
+
+function getWeekday(i) {
+  const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  
+  const d = new Date();
+  let dateNum = d.getDay() + i;
+  if (dateNum > 6) {
+    dateNum = dateNum - 7;
+  }
+
+  return weekday[dateNum];
+  
+}
+
+
+
+
+
+
 
 // Call the main function to start the process
 main();

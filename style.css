@@ -60,12 +60,27 @@
 }
 
 
-
-
-
-
-
-
 #today-temp {
-    font-size: larger;
+    text-align: right;
+    margin-right: 270px;
+    margin-top: 200px;
+}
+
+#week-weathers {
+    display: flex;
+}
+
+#week-weathers div{
+    align-items: center;
+    margin: 10px;
+    width: 100%;
+    text-align: center;
+    
+}
+
+
+
+h1 {
+    color: white;
+    font-size: 200px;
 }
