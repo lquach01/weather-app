@@ -5,6 +5,7 @@
 .cloud {
     background-color: white;
 }
+
 .circle {
     border-radius: 50%; 
     position: absolute;
@@ -14,14 +15,14 @@
     width: 180.02px;
     height: 210.04px;
     top: 228.47px;
-    left: 434.97px;
+    left: 284.97px;
 }
 
 #cloud2 {
     width: 126.42px; 
     height: 168.23px;
     top: 270.28px;
-    left: 329px;
+    left: 179px;
 
 }
 
@@ -29,7 +30,7 @@
     width: 114.41px;
     height: 132.25px;
     top: 306.26px;
-    left: 572.59px;
+    left: 422.59px;
 }
 
 #cloud-rect {
@@ -37,7 +38,7 @@
     height: 84.6px;
     position: absolute;
     top: 354px;
-    left: 390px;
+    left: 240px;
 }
 
 .sun {
@@ -47,7 +48,7 @@
 #sunny-sun-center {
     height: 286px;
     width: 286px;
-    left: 424px;
+    left: 204px;
     top: 167px;
 }
 
@@ -55,29 +56,40 @@
 #cloudy-sun {
     height: 188.89px;
     width: 188.89px;
-    left: 313px;
+    left: 163px;
     top: 165px;
 }
 
-
-#today-temp {
-    text-align: right;
-    margin-right: 270px;
-    margin-top: 200px;
-}
 
 #week-weathers {
     display: flex;
 }
 
 #week-weathers div{
-    align-items: center;
     margin: 10px;
     width: 100%;
     text-align: center;
     
 }
 
+#today {
+    display: flex;
+}
+
+
+#other-info {
+    align-self: center;
+    margin-left: 10%;
+}
+
+.other-info-words {
+    text-align: right;
+}
+
+#today-temp {
+    margin-left: 42%;
+    margin-top: 12%;
+}
 
 h1 {
     color: white;

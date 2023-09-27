@@ -57,10 +57,10 @@ async function main() {
     const rain = data.hourly.rain;
     
     
-    console.log(apparent_temperature[0]);
+    //console.log(apparent_temperature[0]);
     
 
-    //console.log(uv_index_max);
+    //console.log(precipitation_probability_max);
     //[4.65, 3, 4.05, 4.4, 2.65, 2.8, 2.45]
 
 
@@ -125,7 +125,7 @@ function getWeekday(i) {
     dateNum = dateNum - 7;
   }
 
-  return weekday[dateNum];
+  return weekday[6];
   
 }
 
