@@ -101,11 +101,23 @@ function todayOtherInfo(precipitation_probability, apparent_temperature, sunrise
   const sunsetTime = new Date (sunset[0]);
   document.getElementById("precip-prob").innerHTML = "Precipitation Probability: " + precipitation_probability[0] + "%";
   document.getElementById("apparent-temp").innerHTML = "Apparent Temperature: " + apparent_temperature[0] + "°";
-  document.getElementById("sunrise").innerHTML = "Sunrise: " + sunriseTime.getHours() + ":" + sunriseTime.getMinutes();
-  document.getElementById("sunset").innerHTML = "Sunset: " + sunsetTime.getHours() + ":" + sunsetTime.getMinutes();
+
+  sunriseHour = toPST(sunriseTime.getHours());
+  sunsetHour = toPST(sunsetTime.getHours());
+  document.getElementById("sunrise").innerHTML = "Sunrise (in PST): " + sunriseHour + ":" + sunriseTime.getMinutes();
+  document.getElementById("sunset").innerHTML = "Sunset (in PST): " + sunsetHour + ":" + sunsetTime.getMinutes();
   document.getElementById("uv-index").innerHTML = "UV Index: " + uv_index_max[0];
 }
 
+function toPST(hourUTC) {
+  let hourPST = hourUTC - 8;
+  if (hourPST > 24) {
+    hourPST = hourPST - 24;
+  } else if (hourPST < 0) {
+    hourPST = hourPST + 24;
+  } 
+  return hourPST;
+}
 
 function weekWeather(precipitation_probability_max, temperature_2m_max, temperature_2m_min) {
   for (let i = 0; i <= 6; i++) {
@@ -125,7 +137,7 @@ function getWeekday(i) {
     dateNum = dateNum - 7;
   }
 
-  return weekday[6];
+  return weekday[dateNum];
   
 }
 
