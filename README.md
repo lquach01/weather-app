@@ -12,7 +12,7 @@ Information displayed in weather app includes:
 
 - Daily maximum temperatures for the week (in °C)
 - Daily minimum temperatures for the week (in °C)
-- Probability of precipitation with more than 0.1 mm for the day (in %)
+- Daily probability of precipitation with more than 0.1 mm for the week (in %)
 
 
 ## Screenshots
