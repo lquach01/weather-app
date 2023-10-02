@@ -1,6 +1,6 @@
 # Weather App
 
-An accurate Weather App that pulls data from OpenMateo's weather API (can be found here: (https://open-meteo.com)). Weather information is for Vancouver, BC and times are in PST.
+An accurate Weather App that pulls data from OpenMateo's weather API (can be found here: https://open-meteo.com). Weather information is for Vancouver, BC and times are in PST.
 
 The weather icon adjusts based on the current weather conditions to provide a visual representation of the weather. 
 
